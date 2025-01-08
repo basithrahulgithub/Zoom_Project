@@ -1,0 +1,128 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    padding: 0px;
+    margin: 0px;
+}
+
+video {
+    height: 100%;
+    width: 100%;
+}
+
+.vid-container{
+    height: 100vh;
+    width: 100vw;
+}
+
+.action-cont{
+    position: absolute;
+    top: calc((100vh - 12rem) / 2);
+    right: 8px;
+    /*background-color: lightblue; */
+    height: 12rem;
+    width: 6rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 2;
+}
+.action-cont > *{
+    border: 5px solid white;
+    border-radius: 50%;
+    width: 5rem;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.record-btn{
+    background-color: red;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+}
+.capture-btn{
+    background-color: green;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%; 
+}
+.scale-record{
+    animation-name: scale-record;
+    animation-iteration-count: infinite;
+    animation-duration: 1s;
+}
+.scale-capture {
+    animation-name: scale-capture;
+    animation-iteration-count: 1;
+    animation-duration: 1s;
+}
+
+@keyframes scale-record {
+    0%{
+        transform: scale(0.8);
+    }
+    100%{
+        transform: scale(1.1);
+    }
+}
+@keyframes scale-capture {
+    0%{
+        transform: scale(0.8);
+    }
+    100%{
+        transform: scale(1.1);
+    }
+}
+.timer-cont{
+    height: 16rem;
+    width: 5rem;
+    position: absolute;
+    top: 22rem;
+    left: 5rem;
+    color: aqua;
+    font-size: 0.8rem;
+}
+.timer{
+    display: none;
+}
+.filter-cont{
+    height: 16rem;
+    width: 5rem;
+    position: absolute;
+    background-color: aqua;
+    top: calc((100vh - 16rem) / 2);
+    z-index: 2;
+    left: 5rem;
+}
+.filter{
+    background-image: url("https://picsum.photos/seed/picsum/200/300");
+    height: 4rem;
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-blend-mode: color-burn;
+}
+.orange{
+    background-color: #e2a638b5;
+}
+.brown{
+    background-color: #a52a2ab0;
+}
+.pink{
+    background-color: #ffc0cbb8;
+}
+.transparent{
+    background-color: transparent;
+}
+.filter-layer{
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
